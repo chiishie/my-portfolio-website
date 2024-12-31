@@ -39,7 +39,7 @@ export default function ProfileCard() {
       <div className="mt-3 md:mt-4">
         <div className="relative w-fit">
           <h2 className="relative z-10 text-2xl sm:text-[30px] font-medium line-clamp-1">
-            Esther Howard
+            Chidubem Ishie
           </h2>
           <div
             style={{ width: `${underlineWidth}%` }}

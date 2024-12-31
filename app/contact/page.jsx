@@ -2,7 +2,6 @@
 
 import { ContactDiaryIcon } from "@/components/common/Icon";
 import InnerLayout from "@/components/common/InnerLayout";
-import InputErrorMessage from "@/components/common/InputErrorMessage";
 import SectionTitleChip from "@/components/common/SectionTitleChip";
 import { useForm } from "react-hook-form";
 
@@ -16,25 +15,24 @@ export default function Contact() {
 
   const onSubmit = async (data) => {
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
+      const response = await fetch("https://formspree.io/f/xjkvozvw", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
       });
-  
+
       if (response.ok) {
-        console.log('Form submitted successfully');
+        console.log("Form submitted successfully");
         reset();
       } else {
-        console.error('Failed to submit form');
+        console.error("Failed to submit form");
       }
     } catch (error) {
-      console.error('An error occurred:', error);
+      console.error("An error occurred:", error);
     }
   };
-  
 
   return (
     <InnerLayout>
@@ -64,7 +62,7 @@ export default function Contact() {
                 })}
               />
               {errors.firstName && (
-                <InputErrorMessage message={errors.firstName.message} />
+                <span className="text-red-500">{errors.firstName.message}</span>
               )}
             </div>
 
@@ -82,13 +80,13 @@ export default function Contact() {
                 })}
               />
               {errors.lastName && (
-                <InputErrorMessage message={errors.lastName.message} />
+                <span className="text-red-500">{errors.lastName.message}</span>
               )}
             </div>
           </div>
 
-          {/* Email and phone */}
-          <div className="mt-7 sm:mt-10 flex w-full items-center justify-center sm:justify-between gap-7 sm:gap-4 max-sm:flex-col">
+          {/* Email */}
+          <div className="mt-7 sm:mt-10">
             <div className="inputLayout">
               <label htmlFor="email">Email Address*</label>
               <input
@@ -107,19 +105,8 @@ export default function Contact() {
                 })}
               />
               {errors.email && (
-                <InputErrorMessage message={errors.email.message} />
+                <span className="text-red-500">{errors.email.message}</span>
               )}
-            </div>
-
-            <div className="inputLayout">
-              <label htmlFor="phone">Phone Number</label>
-              <input
-                type="number"
-                id="phone"
-                placeholder="91+ 123 456 7890"
-                className="input border-white/30"
-                {...register("phone")}
-              />
             </div>
           </div>
 
@@ -137,7 +124,7 @@ export default function Contact() {
               })}
             />
             {errors.message && (
-              <InputErrorMessage message={errors.message.message} />
+              <span className="text-red-500">{errors.message.message}</span>
             )}
           </div>
 

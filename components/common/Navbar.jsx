@@ -37,7 +37,7 @@ export default function Navbar() {
 
         {/* Download CV and menu btns */}
         <div className="flex items-center justify-center gap-4">
-          <Link className="relative group" href="/">
+          <Link className="relative group" href="">
             <div className="relative z-[1] px-5 sm:px-6 py-2 sm:py-[14px] border border-primary font-medium text-primary hover:text-white transition-all duration-300 ease-linear">
               Download CV
             </div>
