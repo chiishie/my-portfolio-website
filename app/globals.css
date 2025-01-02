@@ -41,3 +41,9 @@ input[type="number"] {
   100% { opacity: 1; }
 }
 
+.superscript-button {
+  font-size: 0.75rem; /* or specify a size, e.g. 0.75rem */
+  line-height: normal;
+  vertical-align: top;
+}
+

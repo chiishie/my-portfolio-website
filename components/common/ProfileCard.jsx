@@ -47,25 +47,28 @@ export default function ProfileCard() {
           ></div>
         </div>
         <p className="text-base sm:text-lg opacity-70 mt-1">
-          Senior Frontend Developer
         </p>
       </div>
 
-      {/* Social links */}
-      <div className="mt-3 sm:mt-4 md:mt-5 flex items-center gap-4">
-        <Link
-          href="/"
-          className="hover:bg-grayBg hover:backdrop-blur-xl transition-all duration-300 ease-linear"
-        >
-          <LinkedinIcon />
-        </Link>
-        <Link
-          href="/"
-          className="hover:bg-grayBg hover:backdrop-blur-xl transition-all duration-300 ease-linear"
-        >
-          <GithubIcon />
-        </Link>
-      </div>
+    {/* Social links */}
+    <div className="mt-3 sm:mt-4 md:mt-5 flex items-center gap-4">
+      <a
+        href="https://www.linkedin.com/in/chidubem-ishie-423456170/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hover:bg-grayBg hover:backdrop-blur-xl transition-all duration-300 ease-linear"
+      >
+        <LinkedinIcon />
+      </a>
+      <a
+        href="https://github.com/chiishie"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hover:bg-grayBg hover:backdrop-blur-xl transition-all duration-300 ease-linear"
+      >
+        <GithubIcon />
+      </a>
+    </div>
 
       {/* Contact me */}
       <Link className="relative w-full group mt-5 inline-block" href="/contact">
